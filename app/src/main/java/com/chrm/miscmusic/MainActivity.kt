@@ -38,6 +38,7 @@ class MainActivity : ComponentActivity() {
                     Greeting(
                         name = "Android",
                     )
+                    input_field()
                 }
             }
         }
@@ -69,7 +70,6 @@ fun Greeting(name: String) {
         modifier = Modifier
             .background(colorScheme.background)
             .fillMaxSize()
-            .horizontalScroll(rememberScrollState())
     ) {
         for (i in 1..5) {
             Column(
@@ -90,6 +90,20 @@ fun Greeting(name: String) {
 
 
 }
+
+@Composable
+fun input_field() {
+
+    TextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text("Label") }
+    ){
+
+    }
+
+}
+
 
 @Preview(showBackground = true)
 @Composable
